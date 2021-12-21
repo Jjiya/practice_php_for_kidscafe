@@ -26,6 +26,9 @@ $result = $mysqli->query($query);
 
 ?>
 <h1>게시판</h1>
+<button>카톡로그인</button>
+<br>
+<br>
 <a href="./pages/board/upload_board.php">작성하기</a>
 <table>
     <thead>
@@ -38,7 +41,7 @@ $result = $mysqli->query($query);
     <?php
     while ($list = mysqli_fetch_assoc($result)) {
         $noticeNameList = array_keys($list);
-        echo "<tr>";
+        echo "<tr onclick=location.href='./pages/board/read_board.php?id=$list[id]'>";
         foreach ($noticeNameList as $key) {
             if ($key !== "admin_user") echo "<td>$list[$key]</td>";
         }

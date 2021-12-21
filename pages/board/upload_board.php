@@ -12,10 +12,10 @@
 $categoryList = array("공지", "이벤트");
 ?>
 <h1>게시글 작성</h1>
-<form action="">
+<form action="../../api/upload_board_process.php" method="POST" >
     <div>
         <h3>제목</h3>
-        <input type="text">
+        <input name="title" type="text">
     </div>
     <div>
         <h3>카테고리</h3>
