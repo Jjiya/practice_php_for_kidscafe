@@ -1,6 +1,6 @@
 <?php
 
-require_once "../config/db/dbAccess.php";
+require_once "../config/db/db_access.php";
 
 $query = "UPDATE notice_board
             SET title = '$_POST[title]', category = '$_POST[category]', description = '$_POST[description]'
@@ -8,7 +8,7 @@ $query = "UPDATE notice_board
 
 $result = $mysqli->query($query);
 
-require_once "../config/db/dbClose.php";
+require_once "../config/db/db_close.php";
 
 if ($result = 1) {
     echo "<script>location.href = '../index.php'</script>";

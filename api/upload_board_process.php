@@ -1,13 +1,13 @@
 <?php
 
-require_once "../config/db/dbAccess.php";
+require_once "../config/db/db_access.php";
 
 $query = "INSERT INTO notice_board(title, category, description, admin_user)
             VALUES('$_POST[title]', '$_POST[category]', '$_POST[description]', 1);";
 
 $result = $mysqli->query($query);
 
-require_once "../config/db/dbClose.php";
+require_once "../config/db/db_close.php";
 
 if ($result = 1) {
     echo "<script>location.href = '../index.php'</script>";

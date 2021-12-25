@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-require_once "../../config/db/dbAccess.php";
+require_once "../../config/db/db_access.php";
 
 $query = "SELECT id, title, category, description, date FROM notice_board WHERE id = $_GET[id];";
 
@@ -53,7 +53,7 @@ $categoryList = array("공지", "이벤트");
     <button type="submit">수정하기</button>
 </form>
 <?php
-require_once "../../config/db/dbClose.php";
+require_once "../../config/db/db_close.php";
 ?>
 </body>
 </html>

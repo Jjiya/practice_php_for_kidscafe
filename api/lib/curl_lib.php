@@ -6,7 +6,7 @@ chdir(dirname(__FILE__));
 
 //  https://dreamaz.tistory.com/35
 /** * 실제 API 호출 메서드 * * @param array $headers * @param string $url * @param array $postData * @return array */
-function httpCall($url, $headers = null, $postData = null, $showResult = false)
+function httpCall($url, $headers = null, $postData = null, $showResult = true)
 {
     try {
         require_once "./convert/convertDataType.php";
@@ -21,7 +21,6 @@ function httpCall($url, $headers = null, $postData = null, $showResult = false)
 //            headers 배열로 형변환
             $headers = getArrayType($headers);
         }
-        echo $postQuery === "" ? "GET" : "POST";
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);    // URL 설정

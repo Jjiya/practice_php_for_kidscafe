@@ -1,6 +1,5 @@
 <?php
-
-// echo $_GET["code"];
+require_once "./lib/curl_lib.php";
 
 $client_id = "797b53098f0f36bb02bddeb91b9a8e86";
 $redirect_uri = "http://localhost:63342/practice_kids/api/kakao_oauth.php";
@@ -15,7 +14,6 @@ $data = [
     "redirect_uri" => $redirect_uri,
     "code" => $_GET["code"]
 ];
-require_once "./lib/curl_lib.php";
 
 $response = httpCall($url, null, $data, true);
 print_r("<br><br>".var_dump($response)."<br><br>");
@@ -24,7 +22,6 @@ if($response["httpCode"] >= 400) {
     echo "error 발생";
     return;
 }
-
 
 $accessToken = json_decode($response["result"], true)["access_token"];
 
@@ -40,7 +37,7 @@ $headers = array(
     "Content-type: application/x-www-form-urlencoded;charset=utf-8"
 );
 
-$response = httpCall( $userUrl, $headers, null, true);
+$response = httpCall( $userUrl, $headers, null, false);
 
 
 if($response["httpCode"] >= 400) {

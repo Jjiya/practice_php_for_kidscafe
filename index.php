@@ -22,7 +22,7 @@
 
 <body>
 <?php
-require_once "./config/db/dbAccess.php";
+require_once "./config/db/db_access.php";
 
 $query = " SELECT notice.*, admin.name FROM notice_board notice JOIN admin_user admin ON notice.admin_user = admin.id; ";
 $result = $mysqli->query($query);
@@ -54,9 +54,10 @@ $result = $mysqli->query($query);
     ?>
     </tbody>
 </table>
+<br><br><br>
+<?php //require_once "./api/lib/send_message.php" ?>
+<!--<div onclick="--><?php //require_once "./api/lib/send_message.php"; send();?><!--">문자 발송</div>-->
 
-<?php require_once "./config/db/dbClose.php" ?>
-
+<?php require_once "./config/db/db_close.php" ?>
 </body>
-
 </html>
