@@ -58,6 +58,8 @@ $result = $mysqli->query($query);
 <?php //require_once "./api/lib/send_message.php" ?>
 <!--<div onclick="--><?php //require_once "./api/lib/send_message.php"; send();?><!--">문자 발송</div>-->
 
+<a href="pages/test/upload_image.php">사진 업로드</a>
+
 <?php require_once "./config/db/db_close.php" ?>
 </body>
 </html>

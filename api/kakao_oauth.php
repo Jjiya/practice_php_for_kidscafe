@@ -1,5 +1,5 @@
 <?php
-require_once "./lib/curl_lib.php";
+require_once "./lib/curl.php";
 
 $client_id = "797b53098f0f36bb02bddeb91b9a8e86";
 $redirect_uri = "http://localhost:63342/practice_kids/api/kakao_oauth.php";
