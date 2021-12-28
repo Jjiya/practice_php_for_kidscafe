@@ -25,5 +25,6 @@ echo date("ymd_His", time()) . "<br>";
     <input type="file" name="imgFile"/><br>
     <input type="submit" value="업로드"/>
 </form>
+<a href="../../api/lib/image_delete.php">삭제</a>
 </body>
 </html>
