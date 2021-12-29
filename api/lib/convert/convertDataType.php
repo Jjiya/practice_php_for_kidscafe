@@ -1,7 +1,7 @@
 <?php
 
 // 배열 타입으로 변환하기
-function getArrayType($data) :array
+function getArrayType($data): array
 {
     switch (gettype($data)) {
         case "array":
@@ -17,8 +17,8 @@ function getArrayType($data) :array
         default:
             break;
     }
-    echo "변환 완료 타입>> ".gettype($data)."<br>";
-    echo var_dump($data);
+    // echo "변환 완료 타입>> ".gettype($data)."<br>";
+    // echo var_dump($data);
 
     return $data;
 }
