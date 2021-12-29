@@ -1,9 +1,12 @@
 <?php
-
 require_once "../config/db/db_access.php";
+require_once "../api/lib/db_query/insert.php";
 
-$query = "INSERT INTO notice_board(title, category, description, admin_user)
-            VALUES('$_POST[title]', '$_POST[category]', '$_POST[description]', 1);";
+$dataList = array_merge($_POST, array("admin_user" => 1));
+
+$query = insertQuery("notice_board", $dataList);
+
+echo $query;
 
 $result = $mysqli->query($query);
 

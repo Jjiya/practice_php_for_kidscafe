@@ -1,6 +1,7 @@
 <?php
-
+chdir(dirname(__FILE__));
 require_once "../convert/convertDataType.php";
+
 
 function showNowQuery($key, $value)
 {
@@ -22,12 +23,15 @@ function makeValueQuery($dataList, $exclude = null): string
 
     if (0) showNowQuery($key, $value);
 
-    if (!in_array($key, $exclude)) {
-      $query = $query . "'" . $key . "'= '" . $value . "', ";
+    if (isset($exclude) && !in_array($key, $exclude)) {
+      $query = $query .  $key . "= '" . $value . "', ";
+    } else {
+      $query = $query .  $key . "= '" . $value . "', ";
     }
   } // end foreach
 
   $query = substr($query, 0, -2); // 맨 마지막 공백과 쉼표 제거
-  // echo   $query;
+
   return $query;
 }
+chdir(dirname($_SERVER['SCRIPT_FILENAME']));
